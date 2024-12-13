@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS';
+}
+
+/* header */
+header{
+    width: 100%;
+    max-width: 100%;
+    padding-left: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+header nav a{
+    color: white;
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+header .title{
+    font-size: 33px;
+}
+
+header .title:hover{
+    color: brown;
+    
+}
+
+header .abc:hover{
+    background-color: brown;
+    color: white;
+    border-radius: 2px;
+}
+
+/* carousel */
+.carousel{
+    width: 100vw;
+    height: 100vh;
+    margin-top: -50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .list .item{
+    width: 180px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-70%);
+    left: 70%;
+    border-radius: 15px;
+    box-shadow: 0 25px 50px black;
+    background-position: 50% 50%;
+    background-size: cover;
+    z-index: 100;
+    transition: 1s;
+}
+
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0,0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .list .item:nth-child(3){
+    left: 67%;
+}
+
+.carousel .list .item:nth-child(4){
+    left: calc(67% + 200px);
+}
+
+.carousel .list .item:nth-child(5){
+    left: calc(67% + 400px);
+}
+
+.carousel .list .item:nth-child(6){
+    left: calc(67% + 600px);
+}
+
+.carousel .list .item:nth-child(n + 7){
+    left: calc(67% + 800px);
+    opacity: 0;
+}
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    width: 400px;
+    text-align: left;
+    color: white;
+    display: none;
+}
+
+.list .item:nth-child(2) .content{
+    display: block;
+}
+
+.content .name{
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 3px 3px 3px white;
+}
+
+.content .desc{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+.content button{
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+.content button:hover{
+    border-color: brown;
+    background-color: brown;
+    color: white;
+}
+
+/* previous, next buttons */
+.controls{
+    position: absolute;
+    top: 90%;
+    left: 7%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: 10px;
+    gap: 10px;
+    align-items: center;
+    color: white;
+}
+
+.controls button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: brown;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.controls button:hover{
+    background: white;
+    color: black;
+    border-radius: 40%;
+}
+
+/* responsive design */
+@media screen and (max-width:1000px) {
+    header{
+        padding-left: 50px;
+    }
+    .list .item .content{
+        left: 50px;
+    }
+    .content .name{
+        font-size: 50px;
+    }
+    .content .desc{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:700px) {
+    header nav a{
+        font-size: 14px;
+        margin-right: 0;
+    }
+    .list .item .content{
+        top: 40%;
+    }
+    .content .name{
+        font-size: 40px;
+    }
+    .content button{
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
